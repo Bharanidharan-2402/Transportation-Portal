@@ -40,9 +40,10 @@ function initializeApp() {
   renderAnnouncements();
   renderLiveTracker();
   renderContactCards();
-  populateFormRoutes();
   populateCompareDropdowns();
+  renderRouteMap();
   renderMapLegend();
+  initMapTracker();
   initCountdown();
   initScrollReveal();
 
@@ -386,8 +387,279 @@ document.getElementById('routeSearch').addEventListener('input', (e) => {
 });
 
 // ==========================================
-// MAP LEGEND
+// SVG ROUTE GRAPH (Closed Graph)
 // ==========================================
+const MAP_LOCATIONS = {
+  // Center
+  "College Campus": { x: 400, y: 300 },
+  
+  // R1
+  "Chidambaram Bus Stand": { x: 420, y: 440 },
+  "Chidambaram Railway Station": { x: 450, y: 390 },
+  "Annamalai Nagar": { x: 480, y: 320 },
+  "C.Mutlur Junction": { x: 420, y: 320 },
+  
+  // Aliases
+  "Chidambaram": { x: 420, y: 440 },
+  "C.Mutlur": { x: 420, y: 320 },
+  
+  // R2
+  "Cuddalore New Bus Stand": { x: 300, y: 50 },
+  "Nellikuppam": { x: 260, y: 110 },
+  "Sethiyathope": { x: 230, y: 170 },
+  "Bhuvanagiri": { x: 250, y: 250 },
+  "Chidambaram Bypass": { x: 340, y: 280 },
+  
+  // R3
+  "Mayiladuthurai Bus Stand": { x: 550, y: 570 },
+  "Mayiladuthurai": { x: 550, y: 570 },
+  "Vaitheeswaran Koil": { x: 520, y: 510 },
+  "Sirkazhi Bus Stand": { x: 500, y: 460 },
+  "Sirkazhi": { x: 500, y: 460 },
+  "Kollidam": { x: 480, y: 410 },
+  "Kollidam Bridge": { x: 480, y: 410 },
+  
+  // R4
+  "Kattumannarkoil": { x: 100, y: 250 },
+  "Keelperumpallam": { x: 170, y: 250 },
+  
+  // R5
+  "Parangipettai (Porto Novo)": { x: 750, y: 200 },
+  "Killai": { x: 670, y: 230 },
+  "Pichavaram Junction": { x: 580, y: 270 },
+  
+  // R6
+  "Tharangambadi (Tranquebar)": { x: 620, y: 450 },
+  "Chidambaram East": { x: 460, y: 370 },
+  
+  // R7
+  "Villupuram Bus Stand": { x: 100, y: 50 },
+  "Virudhachalam": { x: 120, y: 150 },
+  
+  // R8
+  "Kumbakonam Bus Stand": { x: 300, y: 570 }
+};
+
+function renderRouteMap() {
+  const svg = document.getElementById('routeGraphSvg');
+  if (!svg || !APP_DATA.routes) return;
+  
+  const cx = 400;
+  const cy = 300;
+  
+  let pathsHTML = '';
+  let nodesHTML = '';
+  let busesHTML = '';
+  
+  // Keep track of rendered intermediate stops to avoid drawing duplicates
+  const renderedStops = new Set();
+  
+  APP_DATA.routes.forEach(route => {
+    if (!route.stops || route.stops.length < 2) return;
+    
+    const pathId = 'path-' + route.id;
+    let forwardPoints = [];
+    
+    // Extract points and draw nodes
+    route.stops.forEach((stop, index) => {
+      const coord = MAP_LOCATIONS[stop.name];
+      if (!coord) return; // Fallback if stop not defined
+      forwardPoints.push(coord);
+      
+      // Draw intermediate nodes and terminal nodes
+      const isTerminal = index === 0;
+      const isCollege = stop.name === "College Campus";
+      
+      if (!isCollege) {
+        if (isTerminal) {
+          // Draw large origin node
+          if (!renderedStops.has(stop.name)) {
+            nodesHTML += `
+              <g class="svg-node" transform="translate(${coord.x}, ${coord.y})">
+                <circle r="16" fill="var(--clr-bg-primary)" stroke="${route.color}" stroke-width="4" />
+                <text y="-24" fill="var(--clr-text-primary)" font-family="var(--font-heading)" font-size="14" font-weight="600" text-anchor="middle">${stop.name}</text>
+                <text y="5" fill="${route.color}" font-family="var(--font-heading)" font-size="12" font-weight="800" text-anchor="middle">R${route.number}</text>
+              </g>
+            `;
+            renderedStops.add(stop.name);
+          }
+        } else {
+          // Draw small intermediate stop node
+          if (!renderedStops.has(stop.name)) {
+            nodesHTML += `
+              <g class="svg-stop-node" transform="translate(${coord.x}, ${coord.y})">
+                <circle r="5" fill="${route.color}" />
+                <text class="stop-label" y="-12" fill="var(--clr-text-secondary)" font-family="var(--font-heading)" font-size="12" font-weight="500" text-anchor="middle" style="text-shadow: 0 1px 3px rgba(0,0,0,0.8);">${stop.name}</text>
+              </g>
+            `;
+            renderedStops.add(stop.name);
+          }
+        }
+      }
+    });
+    
+    if (forwardPoints.length < 2) return;
+    
+    // Construct multi-segment path: Forward (Origin to College)
+    let pathD = `M ${forwardPoints[0].x} ${forwardPoints[0].y} `;
+    for (let i = 1; i < forwardPoints.length; i++) {
+      pathD += `L ${forwardPoints[i].x} ${forwardPoints[i].y} `;
+    }
+    // Reverse (College back to Origin) so the bus animates back and forth!
+    for (let i = forwardPoints.length - 2; i >= 0; i--) {
+      pathD += `L ${forwardPoints[i].x} ${forwardPoints[i].y} `;
+    }
+    
+    // Draw the full dashed path for this route
+    pathsHTML += `<path id="${pathId}" d="${pathD}" stroke="${route.color}" stroke-width="4" stroke-dasharray="8 6" fill="none" opacity="0.6" stroke-linejoin="round" stroke-linecap="round" />`;
+    
+    // Draw moving bus with label
+    busesHTML += `
+      <g class="svg-bus">
+        <rect x="-12" y="-8" width="24" height="16" rx="4" fill="${route.color}" />
+        <circle cx="-6" cy="8" r="2" fill="#fff" />
+        <circle cx="6" cy="8" r="2" fill="#fff" />
+        <text y="3" fill="#fff" font-family="var(--font-heading)" font-size="10" font-weight="700" text-anchor="middle">R${route.number}</text>
+        <animateMotion dur="10s" repeatCount="indefinite">
+          <mpath href="#${pathId}" />
+        </animateMotion>
+      </g>
+    `;
+  });
+  
+  // Draw Center College Node on top
+  nodesHTML += `
+    <g class="svg-node" transform="translate(${cx}, ${cy})">
+      <circle r="24" fill="var(--clr-accent-blue)" stroke="#fff" stroke-width="4" />
+      <text y="5" fill="#fff" font-size="20" text-anchor="middle">🏫</text>
+      <text y="40" fill="var(--clr-text-primary)" font-family="var(--font-heading)" font-size="16" font-weight="700" text-anchor="middle">GASC, C.Mutlur</text>
+    </g>
+  `;
+  
+  svg.innerHTML = pathsHTML + busesHTML + nodesHTML;
+}
+
+// ==========================================
+// REAL-TIME TRACKER LOGIC
+// ==========================================
+
+function parseTimeToMinutes(timeStr) {
+  if (!timeStr) return 0;
+  const match = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!match) return 0;
+  let h = parseInt(match[1]);
+  const m = parseInt(match[2]);
+  const ampm = match[3].toUpperCase();
+  if (ampm === 'PM' && h < 12) h += 12;
+  if (ampm === 'AM' && h === 12) h = 0;
+  return h * 60 + m;
+}
+
+function formatMinutesToTime(mins) {
+  let h = Math.floor(mins / 60);
+  const m = Math.floor(mins % 60);
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  if (h > 12) h -= 12;
+  if (h === 0) h = 12;
+  return `${h}:${m.toString().padStart(2, '0')} ${ampm}`;
+}
+
+function initMapTracker() {
+  const select = document.getElementById('stopSearchSelect');
+  const btn = document.getElementById('btnSearchStop');
+  const resultsDiv = document.getElementById('etaResults');
+  
+  if (!select) return;
+  
+  // Populate stop dropdown
+  const stops = new Set();
+  APP_DATA.routes.forEach(r => {
+    if(r.stops) r.stops.forEach(s => {
+      if(s.name !== "College Campus") stops.add(s.name);
+    });
+  });
+  
+  Array.from(stops).sort().forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    select.appendChild(opt);
+  });
+  
+  btn.addEventListener('click', () => {
+    const stopName = select.value;
+    if (!stopName) {
+      resultsDiv.classList.add('hidden');
+      return;
+    }
+    
+    let html = '';
+    const dt = new Date();
+    const now = dt.getHours() * 60 + dt.getMinutes();
+    
+    APP_DATA.routes.forEach(r => {
+      if(!r.stops) return;
+      const stopIdx = r.stops.findIndex(s => s.name === stopName);
+      if (stopIdx !== -1) {
+        const stop = r.stops[stopIdx];
+        const mTime = parseTimeToMinutes(stop.morningTime);
+        const eTime = parseTimeToMinutes(stop.eveningTime);
+        
+        let nextTime = null;
+        if (now <= mTime) nextTime = mTime;
+        else if (now <= eTime) nextTime = eTime;
+        
+        if (nextTime !== null) {
+          const diff = nextTime - now;
+          const hrs = Math.floor(diff/60);
+          const mins = diff % 60;
+          const diffStr = hrs > 0 ? `${hrs}h ${mins}m` : `${mins}m`;
+          
+          const isMorning = (nextTime === mTime);
+          const collegeIndex = r.stops.findIndex(s => s.name === "College Campus");
+          
+          let routeLabel, destLabel, destTimeStr;
+          
+          if (isMorning) {
+            // Bus is going from Home -> College
+            routeLabel = `R${r.number} to College`;
+            destLabel = `Arrives at College`;
+            destTimeStr = r.stops[collegeIndex].morningTime;
+          } else {
+            // Bus is going from College -> Home
+            routeLabel = `R${r.number} from College`;
+            // It left college at eveningTime of collegeIndex, and arrives here at nextTime
+            destLabel = `Departs College at`;
+            destTimeStr = r.stops[collegeIndex].eveningTime;
+          }
+          
+          html += `
+            <div class="eta-card">
+              <div class="eta-route">
+                <span class="live-bus-badge" style="background:${r.color};width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:4px;color:#fff;">${r.number}</span>
+                ${routeLabel}
+              </div>
+              <div class="eta-time">
+                Expected at <strong>${formatMinutesToTime(nextTime)}</strong>
+                in ${diffStr}
+                <div style="font-size:0.75rem; color:var(--clr-text-muted); margin-top:4px;">
+                  ${destLabel}: ${destTimeStr}
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      }
+    });
+    
+    if (html === '') {
+      html = '<div style="padding:16px;text-align:center;color:var(--clr-text-muted);">No more buses passing this stop today.</div>';
+    }
+    
+    resultsDiv.innerHTML = html;
+    resultsDiv.classList.remove('hidden');
+  });
+}
+
 function renderMapLegend() {
   const legend = document.getElementById('mapLegend');
   if (!APP_DATA.routes) return;

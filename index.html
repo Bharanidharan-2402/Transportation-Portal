@@ -191,26 +191,37 @@
     </div>
   </section>
 
-  <!-- ========== MAP SECTION (REAL GOOGLE MAPS) ========== -->
+  <!-- ========== MAP SECTION ========== -->
   <section class="section" id="map" style="background: var(--clr-bg-secondary);">
     <div class="section-container">
       <div class="section-header reveal">
-        <span class="section-tag">🗺️ College Location</span>
-        <h2 class="section-title">Find Us on the Map</h2>
-        <p class="section-desc">Government Arts & Science College, C.Mutlur, Chidambaram, Cuddalore District, Tamil Nadu 608102.</p>
+        <span class="section-tag">🗺️ Find Next Buses</span>
+        <h2 class="section-title">Find Next Buses</h2>
+        <p class="section-desc">Search for your stop to find the exact arrival time of the next bus.</p>
       </div>
 
       <div class="map-container reveal">
+        <!-- Live Tracker UI -->
+        <div class="live-tracker-ui">
+          <div class="tracker-header">
+            <h3>Live Bus Tracker</h3>
+          </div>
+          <div class="tracker-search">
+            <select id="stopSearchSelect" class="form-input">
+              <option value="">Select your stop to find next bus...</option>
+              <!-- Populated by JS -->
+            </select>
+            <button id="btnSearchStop" class="btn btn-primary">Find ETA</button>
+          </div>
+          <div id="etaResults" class="eta-results hidden">
+            <!-- ETA Cards populated by JS -->
+          </div>
+        </div>
+
         <div class="map-embed-wrapper">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3906.2!2d79.6935!3d11.3936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54c100601b87f7%3A0xe3a450055e742290!2sGovernment%20Arts%20%26%20Science%20College%2C%20C.Mutlur!5e0!3m2!1sen!2sin!4v1695100000000!5m2!1sen!2sin"
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Government Arts & Science College, C.Mutlur Location">
-          </iframe>
+          <svg id="routeGraphSvg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Abstract route map connecting origin cities to the college"></svg>
           <div class="map-overlay-info">
-            📍 <strong>GASC, C.Mutlur</strong> &nbsp;·&nbsp; 8 km from Chidambaram &nbsp;·&nbsp; Cuddalore District
+            📍 <strong>GASC, C.Mutlur</strong> &nbsp;·&nbsp; 8 routes shown &nbsp;·&nbsp; Cuddalore District
           </div>
         </div>
         <div class="map-legend" id="mapLegend">
