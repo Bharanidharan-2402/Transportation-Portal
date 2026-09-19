@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Government Arts & Science College, C.Mutlur — Transport Portal. Find bus routes from Chidambaram, Cuddalore, Mayiladuthurai, Sirkazhi, Kattumannarkoil, Parangipettai, Villupuram & Kumbakonam. Apply for bus pass online.">
+  <title>GASC Mutlur — College Transport Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-bus">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="12" width="48" height="36" rx="6" fill="#3b82f6"/>
+        <rect x="12" y="18" width="12" height="10" rx="2" fill="#60a5fa"/>
+        <rect x="28" y="18" width="12" height="10" rx="2" fill="#60a5fa"/>
+        <rect x="44" y="18" width="8" height="10" rx="2" fill="#60a5fa"/>
+        <rect x="8" y="34" width="48" height="6" fill="#2563eb"/>
+        <circle cx="20" cy="52" r="5" fill="#334155"/>
+        <circle cx="20" cy="52" r="2.5" fill="#64748b"/>
+        <circle cx="44" cy="52" r="5" fill="#334155"/>
+        <circle cx="44" cy="52" r="2.5" fill="#64748b"/>
+        <rect x="4" y="36" width="6" height="3" rx="1.5" fill="#f97316"/>
+        <rect x="54" y="36" width="6" height="3" rx="1.5" fill="#ef4444"/>
+      </svg>
+    </div>
+    <div class="preloader-text">Loading Transport Portal</div>
+    <div class="preloader-college">Govt. Arts & Science College, C.Mutlur</div>
+    <div class="preloader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon">🚌</div>
+        <div class="nav-logo-text">
+          <span>GASC TransitHub</span>
+          <span class="nav-logo-sub">C.Mutlur, Chidambaram</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#tracker" class="nav-link" data-section="tracker">Live</a>
+        <a href="#routes" class="nav-link" data-section="routes">Routes</a>
+        <a href="#map" class="nav-link" data-section="map">Map</a>
+        <a href="#fees" class="nav-link" data-section="fees">Fees</a>
+        <a href="#apply" class="nav-link" data-section="apply">Apply</a>
+        <a href="#compare" class="nav-link" data-section="compare">Compare</a>
+        <a href="#announcements" class="nav-link" data-section="announcements">News</a>
+        <a href="#dashboard" class="nav-link" data-section="dashboard">Dashboard</a>
+        <a href="#contact" class="nav-link" data-section="contact">Help</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <a href="#apply" class="nav-cta">Apply for Pass</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="#tracker" class="nav-link" data-section="tracker">🔴 Live Tracker</a>
+    <a href="#routes" class="nav-link" data-section="routes">🚌 Routes</a>
+    <a href="#map" class="nav-link" data-section="map">🗺️ Map</a>
+    <a href="#fees" class="nav-link" data-section="fees">💰 Fees</a>
+    <a href="#apply" class="nav-link" data-section="apply">📋 Apply</a>
+    <a href="#compare" class="nav-link" data-section="compare">⚖️ Compare</a>
+    <a href="#announcements" class="nav-link" data-section="announcements">📢 News</a>
+    <a href="#dashboard" class="nav-link" data-section="dashboard">👤 Dashboard</a>
+    <a href="#contact" class="nav-link" data-section="contact">📞 Help</a>
+  </div>
+
+  <!-- ========== TICKER ========== -->
+  <div class="ticker" id="ticker">
+    <div class="ticker-content" id="tickerContent"></div>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Academic Year 2026–2027 — Transport Services Active
+      </div>
+      <div class="hero-college-name">Government Arts & Science College, C.Mutlur</div>
+      <h1 class="hero-title">
+        College Transport<br>
+        <span class="hero-title-gradient">Information Portal</span>
+      </h1>
+      <p class="hero-subtitle">
+        Explore bus routes from Chidambaram, Cuddalore, Mayiladuthurai & more. Track live buses, check fees, and apply for your bus pass — all in one place.
+      </p>
+      <div class="hero-actions">
+        <a href="#routes" class="btn btn-primary">🗺️ Explore Routes</a>
+        <a href="#apply" class="btn btn-outline">📋 Apply for Bus Pass</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="8">0</div>
+          <div class="hero-stat-label">Bus Routes</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="42">0</div>
+          <div class="hero-stat-label">Bus Stops</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="1200">0</div>
+          <div class="hero-stat-label">Students Served</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="24">0</div>
+          <div class="hero-stat-label">Buses Fleet</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-clock" id="heroClock"></div>
+  </section>
+
+  <!-- ========== LIVE BUS TRACKER (UNIQUE) ========== -->
+  <section class="section" id="tracker" style="background: var(--clr-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">🔴 Live Bus Tracker</span>
+        <h2 class="section-title">Real-Time Bus Status</h2>
+        <p class="section-desc">Track bus locations, seat availability, and estimated arrival times for all routes.</p>
+      </div>
+
+      <div class="countdown-wrapper reveal">
+        <div class="countdown-box">
+          <div class="countdown-number" id="countHours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-number" id="countMinutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-number" id="countSeconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+        <div class="countdown-box" style="align-self: center;">
+          <div style="font-size: 0.82rem; color: var(--clr-text-muted);" id="countdownLabel">until first bus arrives</div>
+        </div>
+      </div>
+
+      <div class="tracker-grid reveal" id="trackerGrid" style="margin-top: 40px;">
+        <!-- Populated by JS from data.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BUS ROUTES SECTION ========== -->
+  <section class="section" id="routes">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">🚌 Routes & Schedules</span>
+        <h2 class="section-title">Bus Routes & Timetable</h2>
+        <p class="section-desc">8 routes covering Chidambaram, Cuddalore, Mayiladuthurai, Sirkazhi, Kattumannarkoil, Parangipettai, Villupuram & Kumbakonam.</p>
+      </div>
+
+      <div class="routes-controls reveal">
+        <div class="search-box">
+          <span class="search-box-icon">🔍</span>
+          <input type="text" id="routeSearch" placeholder="Search routes, stops, or areas..." autocomplete="off">
+        </div>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="ac">AC</button>
+          <button class="filter-tab" data-filter="non-ac">Non-AC</button>
+          <button class="filter-tab" data-filter="express">Express</button>
+        </div>
+        <div class="schedule-toggle">
+          <button class="schedule-toggle-btn active" data-schedule="morning" id="morningBtn">☀️ Morning</button>
+          <button class="schedule-toggle-btn" data-schedule="evening" id="eveningBtn">🌙 Evening</button>
+        </div>
+      </div>
+
+      <div class="routes-grid" id="routesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ========== MAP SECTION (REAL GOOGLE MAPS) ========== -->
+  <section class="section" id="map" style="background: var(--clr-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">🗺️ College Location</span>
+        <h2 class="section-title">Find Us on the Map</h2>
+        <p class="section-desc">Government Arts & Science College, C.Mutlur, Chidambaram, Cuddalore District, Tamil Nadu 608102.</p>
+      </div>
+
+      <div class="map-container reveal">
+        <div class="map-embed-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3906.2!2d79.6935!3d11.3936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54c100601b87f7%3A0xe3a450055e742290!2sGovernment%20Arts%20%26%20Science%20College%2C%20C.Mutlur!5e0!3m2!1sen!2sin!4v1695100000000!5m2!1sen!2sin"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Government Arts & Science College, C.Mutlur Location">
+          </iframe>
+          <div class="map-overlay-info">
+            📍 <strong>GASC, C.Mutlur</strong> &nbsp;·&nbsp; 8 km from Chidambaram &nbsp;·&nbsp; Cuddalore District
+          </div>
+        </div>
+        <div class="map-legend" id="mapLegend">
+          <!-- Populated by JS from route data -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEE STRUCTURE ========== -->
+  <section class="section" id="fees">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">💰 Fee Structure</span>
+        <h2 class="section-title">Transport Fee Plans</h2>
+        <p class="section-desc">Transparent pricing based on distance. Choose semester or annual plans with AC/Non-AC options.</p>
+      </div>
+
+      <div class="fee-toggle-wrapper reveal">
+        <div class="fee-toggle">
+          <button class="fee-toggle-btn active" data-period="semester" id="semesterBtn">Semester</button>
+          <button class="fee-toggle-btn" data-period="annual" id="annualBtn">Annual (Save 10%)</button>
+        </div>
+      </div>
+
+      <div class="fee-type-toggle reveal">
+        <button class="fee-type-btn active" data-bustype="non-ac" id="feeNonAcBtn">🚌 Non-AC</button>
+        <button class="fee-type-btn" data-bustype="ac" id="feeAcBtn">❄️ AC Bus</button>
+      </div>
+
+      <div class="fee-cards reveal" id="feeCards"></div>
+    </div>
+  </section>
+
+  <!-- ========== BUS PASS APPLICATION ========== -->
+  <section class="section" id="apply" style="background: var(--clr-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">📋 Bus Pass Application</span>
+        <h2 class="section-title">Apply for Your Bus Pass</h2>
+        <p class="section-desc">Complete the form below. Your application will be saved and processed within 3 working days.</p>
+      </div>
+
+      <div class="form-wizard reveal" id="formWizard">
+        <div class="wizard-progress" id="wizardProgress">
+          <div class="wizard-step-indicator active" data-step="1">
+            <div class="wizard-step-circle">1</div>
+            <span class="wizard-step-label">Personal</span>
+          </div>
+          <div class="wizard-step-indicator" data-step="2">
+            <div class="wizard-step-circle">2</div>
+            <span class="wizard-step-label">Route</span>
+          </div>
+          <div class="wizard-step-indicator" data-step="3">
+            <div class="wizard-step-circle">3</div>
+            <span class="wizard-step-label">Details</span>
+          </div>
+          <div class="wizard-step-indicator" data-step="4">
+            <div class="wizard-step-circle">4</div>
+            <span class="wizard-step-label">Review</span>
+          </div>
+          <div class="wizard-progress-bar" id="wizardProgressBar" style="width: 0%"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="form-step active" id="step1">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 24px; font-size: 1.15rem;">Personal Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" class="form-input" id="fullName" placeholder="Enter your full name" required>
+              <div class="form-error">Please enter your full name</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Student ID <span class="required">*</span></label>
+              <input type="text" class="form-input" id="studentId" placeholder="e.g., STU2026001" required>
+              <div class="form-error">Please enter a valid Student ID</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Email <span class="required">*</span></label>
+              <input type="email" class="form-input" id="email" placeholder="your.email@college.edu" required>
+              <div class="form-error">Please enter a valid email</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone <span class="required">*</span></label>
+              <input type="tel" class="form-input" id="phone" placeholder="+91 9876543210" required>
+              <div class="form-error">Please enter a valid phone</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Department <span class="required">*</span></label>
+              <select class="form-select" id="department" required>
+                <option value="">Select Department</option>
+                <option value="B.Sc Computer Science">B.Sc Computer Science</option>
+                <option value="B.Sc Mathematics">B.Sc Mathematics</option>
+                <option value="B.Sc Physics">B.Sc Physics</option>
+                <option value="B.Sc Chemistry">B.Sc Chemistry</option>
+                <option value="B.Sc Zoology">B.Sc Zoology</option>
+                <option value="B.Sc Botany">B.Sc Botany</option>
+                <option value="B.A Tamil">B.A Tamil</option>
+                <option value="B.A English">B.A English</option>
+                <option value="B.A History">B.A History</option>
+                <option value="B.A Economics">B.A Economics</option>
+                <option value="B.Com">B.Com</option>
+                <option value="BCA">BCA</option>
+                <option value="M.Sc Computer Science">M.Sc Computer Science</option>
+                <option value="M.Sc Mathematics">M.Sc Mathematics</option>
+                <option value="M.A Tamil">M.A Tamil</option>
+                <option value="M.A English">M.A English</option>
+                <option value="M.Com">M.Com</option>
+              </select>
+              <div class="form-error">Please select department</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Year <span class="required">*</span></label>
+              <select class="form-select" id="year" required>
+                <option value="">Select Year</option>
+                <option value="1st">1st Year</option>
+                <option value="2nd">2nd Year</option>
+                <option value="3rd">3rd Year</option>
+              </select>
+              <div class="form-error">Please select year</div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <div></div>
+            <button class="btn-form btn-form-next" onclick="nextStep(1)">Next Step →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step" id="step2">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 24px; font-size: 1.15rem;">Route & Pass Selection</h3>
+          <div class="form-group">
+            <label class="form-label">Select Route <span class="required">*</span></label>
+            <select class="form-select" id="routeSelect" required>
+              <option value="">Choose your bus route</option>
+            </select>
+            <div class="form-error">Please select a route</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Boarding Point <span class="required">*</span></label>
+            <select class="form-select" id="boardingPoint" required>
+              <option value="">Select route first</option>
+            </select>
+            <div class="form-error">Please select boarding point</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Pass Type <span class="required">*</span></label>
+              <select class="form-select" id="passType" required>
+                <option value="">Select Pass Type</option>
+                <option value="Semester">Semester Pass</option>
+                <option value="Annual">Annual Pass</option>
+              </select>
+              <div class="form-error">Please select pass type</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Bus Preference</label>
+              <select class="form-select" id="busPreference">
+                <option value="Non-AC">Non-AC Bus</option>
+                <option value="AC">AC Bus (Higher fees)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-form btn-form-back" onclick="prevStep(2)">← Back</button>
+            <button class="btn-form btn-form-next" onclick="nextStep(2)">Next Step →</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" id="step3">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 24px; font-size: 1.15rem;">Additional Details</h3>
+          <div class="form-group">
+            <label class="form-label">Residential Address <span class="required">*</span></label>
+            <textarea class="form-input" id="address" placeholder="Enter your residential address..." rows="3" style="resize: vertical;" required></textarea>
+            <div class="form-error">Please enter address</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Parent/Guardian Name <span class="required">*</span></label>
+              <input type="text" class="form-input" id="guardianName" placeholder="Parent/guardian name" required>
+              <div class="form-error">Please enter guardian name</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Emergency Contact <span class="required">*</span></label>
+              <input type="tel" class="form-input" id="emergencyContact" placeholder="+91 9876543210" required>
+              <div class="form-error">Please enter emergency contact</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Blood Group</label>
+            <select class="form-select" id="bloodGroup">
+              <option value="">Select (optional)</option>
+              <option value="A+">A+</option><option value="A-">A-</option>
+              <option value="B+">B+</option><option value="B-">B-</option>
+              <option value="O+">O+</option><option value="O-">O-</option>
+              <option value="AB+">AB+</option><option value="AB-">AB-</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Medical Conditions (if any)</label>
+            <input type="text" class="form-input" id="medical" placeholder="None / Specify conditions">
+          </div>
+          <div class="form-actions">
+            <button class="btn-form btn-form-back" onclick="prevStep(3)">← Back</button>
+            <button class="btn-form btn-form-next" onclick="nextStep(3)">Review Application →</button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step" id="step4">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 24px; font-size: 1.15rem;">Review Your Application</h3>
+          <div class="form-preview" id="formPreview"></div>
+          <div class="form-actions" style="margin-top: 24px;">
+            <button class="btn-form btn-form-back" onclick="prevStep(4)">← Edit</button>
+            <button class="btn-form btn-form-next" onclick="submitApplication()" style="background: linear-gradient(135deg, #10b981, #06b6d4);">✅ Submit Application</button>
+          </div>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✅</div>
+          <h3>Application Submitted!</h3>
+          <p style="color: var(--clr-text-secondary); margin-bottom: 16px;">Your bus pass application has been saved. You'll get confirmation within 3 working days.</p>
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--clr-text-muted);">
+            Reference No: <strong style="color: var(--clr-accent-blue);" id="refNumber">—</strong>
+          </p>
+          <button class="btn btn-primary" style="margin-top: 24px;" onclick="resetForm()">Apply for Another Pass</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ROUTE COMPARISON (UNIQUE) ========== -->
+  <section class="section" id="compare">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">⚖️ Route Comparison</span>
+        <h2 class="section-title">Compare Two Routes</h2>
+        <p class="section-desc">Not sure which route suits you? Compare distance, timing, fees, and seat availability side by side.</p>
+      </div>
+
+      <div class="compare-wrapper reveal">
+        <div class="compare-select-card">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 16px; font-size: 1rem;">Route A</h3>
+          <select class="form-select" id="compareRouteA" onchange="updateComparison()">
+            <option value="">Select Route</option>
+          </select>
+          <div class="compare-detail" id="compareDetailA"></div>
+        </div>
+        <div class="compare-vs">
+          <div class="compare-vs-badge">VS</div>
+        </div>
+        <div class="compare-select-card">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 16px; font-size: 1rem;">Route B</h3>
+          <select class="form-select" id="compareRouteB" onchange="updateComparison()">
+            <option value="">Select Route</option>
+          </select>
+          <div class="compare-detail" id="compareDetailB"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANNOUNCEMENTS ========== -->
+  <section class="section" id="announcements" style="background: var(--clr-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">📢 Announcements</span>
+        <h2 class="section-title">Latest Transport News</h2>
+        <p class="section-desc">Stay informed with route changes, deadlines, and important notices.</p>
+      </div>
+      <div class="announcements-grid reveal" id="announcementsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ========== STUDENT DASHBOARD ========== -->
+  <section class="section" id="dashboard">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">👤 Student Dashboard</span>
+        <h2 class="section-title">Your Transport Dashboard</h2>
+        <p class="section-desc">Log in to view your bus pass, route details, and pass status.</p>
+      </div>
+
+      <div class="dashboard-wrapper reveal">
+        <div class="dashboard-login" id="dashboardLogin">
+          <h3>Student Login</h3>
+          <p>Enter your credentials to access dashboard</p>
+          <div class="dashboard-demo-hint">
+            Demo 1: <strong>STU2026001</strong> / <strong>demo123</strong><br>
+            Demo 2: <strong>STU2026042</strong> / <strong>pass456</strong>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input" id="loginStudentId" placeholder="Student ID">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-input" id="loginPassword" placeholder="Password">
+          </div>
+          <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="loginDashboard()">🔐 Login</button>
+        </div>
+
+        <div class="dashboard-panel" id="dashboardPanel">
+          <!-- Bus Pass Card (Unique - visual pass) -->
+          <div class="bus-pass-card" id="busPassCard">
+            <div class="bus-pass-card-header">
+              <div>
+                <div class="bus-pass-college">Govt. Arts & Science College, C.Mutlur</div>
+                <div class="bus-pass-title">🎫 Student Bus Pass</div>
+                <div class="bus-pass-number" id="passNumber">—</div>
+              </div>
+              <div class="bus-pass-qr" id="passQR">
+                <svg viewBox="0 0 50 50" width="60" height="60">
+                  <rect x="2" y="2" width="10" height="10" fill="#000"/>
+                  <rect x="14" y="2" width="4" height="4" fill="#000"/>
+                  <rect x="20" y="2" width="4" height="4" fill="#000"/>
+                  <rect x="38" y="2" width="10" height="10" fill="#000"/>
+                  <rect x="4" y="4" width="6" height="6" fill="#fff"/>
+                  <rect x="5" y="5" width="4" height="4" fill="#000"/>
+                  <rect x="40" y="4" width="6" height="6" fill="#fff"/>
+                  <rect x="41" y="5" width="4" height="4" fill="#000"/>
+                  <rect x="2" y="14" width="4" height="4" fill="#000"/>
+                  <rect x="8" y="16" width="4" height="4" fill="#000"/>
+                  <rect x="16" y="14" width="4" height="4" fill="#000"/>
+                  <rect x="24" y="16" width="8" height="4" fill="#000"/>
+                  <rect x="36" y="14" width="4" height="4" fill="#000"/>
+                  <rect x="44" y="18" width="4" height="4" fill="#000"/>
+                  <rect x="2" y="22" width="4" height="4" fill="#000"/>
+                  <rect x="10" y="24" width="6" height="4" fill="#000"/>
+                  <rect x="20" y="22" width="4" height="8" fill="#000"/>
+                  <rect x="28" y="24" width="4" height="4" fill="#000"/>
+                  <rect x="38" y="22" width="4" height="4" fill="#000"/>
+                  <rect x="2" y="38" width="10" height="10" fill="#000"/>
+                  <rect x="4" y="40" width="6" height="6" fill="#fff"/>
+                  <rect x="5" y="41" width="4" height="4" fill="#000"/>
+                  <rect x="16" y="38" width="4" height="4" fill="#000"/>
+                  <rect x="24" y="40" width="8" height="4" fill="#000"/>
+                  <rect x="36" y="38" width="4" height="4" fill="#000"/>
+                  <rect x="42" y="42" width="6" height="6" fill="#000"/>
+                </svg>
+              </div>
+            </div>
+            <div class="bus-pass-details" id="busPassDetails">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div class="dashboard-profile" id="dashboardProfileCard">
+            <div class="profile-header">
+              <div class="profile-avatar" id="profileAvatar">—</div>
+              <div class="profile-info">
+                <h3 id="profileName">—</h3>
+                <p id="profileMeta">—</p>
+              </div>
+            </div>
+            <div class="profile-details" id="profileDetails"></div>
+          </div>
+
+          <div class="pass-tracker" id="passTrackerCard">
+            <h3>🎫 Pass Status Tracker</h3>
+            <div class="tracker-steps" id="trackerSteps"></div>
+          </div>
+
+          <button class="btn btn-outline" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="logoutDashboard()">🚪 Logout</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT & FAQ ========== -->
+  <section class="section" id="contact" style="background: var(--clr-bg-secondary);">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">📞 Help & Contact</span>
+        <h2 class="section-title">Need Help? We're Here</h2>
+        <p class="section-desc">Reach out to the Transport Office or find answers in our FAQ.</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">Frequently Asked Questions</h3>
+          <div class="faq-list" id="faqList">
+            <div class="faq-item">
+              <button class="faq-question">How do I apply for a bus pass?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Navigate to the "Apply for Pass" section, fill in the 4-step form with your personal details, route, and documents. Once submitted, you'll receive a reference number. The pass will be processed within 3 working days. Your application is stored securely.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">What are the bus timings?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Morning buses depart from the first stop between 6:15 AM – 8:00 AM and arrive at college by 8:15 – 8:30 AM. Evening departure from college is at 4:30 PM. Check the Routes section for exact timings per stop. Long-distance routes (Villupuram, Kumbakonam) start earlier.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Can I change my route mid-semester?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes, route changes can be requested at the Transport Office (Room G-02, Admin Block). Submit a written request with your Student ID and preferred new route. Changes are subject to seat availability and take effect within 5 working days.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">What if I lose my bus pass?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Report the loss immediately. A duplicate can be issued for ₹200. Submit a written application with a copy of your Student ID. The duplicate will be issued within 2 working days. You can also check your pass details on this portal's Dashboard.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Are AC buses available on all routes?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">AC buses currently operate on Routes 2 (Cuddalore), 6 (Sirkazhi), and 7 (Villupuram). AC pass pricing is approximately 40% higher. We plan to expand AC services to all routes by next academic year. Use the Route Comparison tool to check options.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Is there a refund policy?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Refunds are available within the first 15 days of the semester. After that, a pro-rata refund (minus 15% admin charge) is processed only for medical reasons with proper documentation. Contact the Accounts section.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">Contact Transport Office</h3>
+          <div class="contact-info-cards" id="contactCards">
+            <!-- Populated from JSON -->
+          </div>
+
+          <div class="feedback-form">
+            <h3>💬 Send Feedback</h3>
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" id="feedbackName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Feedback Type</label>
+              <select class="form-select" id="feedbackType">
+                <option value="general">General</option>
+                <option value="complaint">Complaint</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="appreciation">Appreciation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-input" id="feedbackMessage" placeholder="Type your feedback..." rows="4" style="resize: vertical;"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="submitFeedback()">📤 Send Feedback</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🚌 GASC TransitHub</h3>
+          <p>Official transport portal for Government Arts & Science College, C.Mutlur, Chidambaram. Making daily commutes smarter, safer, and hassle-free for every student.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#routes">Bus Routes</a>
+          <a href="#map">College Map</a>
+          <a href="#fees">Fee Structure</a>
+          <a href="#apply">Apply for Pass</a>
+          <a href="#compare">Compare Routes</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#tracker">Live Tracker</a>
+          <a href="#announcements">Announcements</a>
+          <a href="#dashboard">Student Dashboard</a>
+          <a href="#contact">FAQ & Help</a>
+        </div>
+        <div class="footer-col">
+          <h4>Timings</h4>
+          <a href="#">Mon–Sat: 6:00 AM – 7:00 PM</a>
+          <a href="#">Office: 9:00 AM – 5:00 PM</a>
+          <a href="#">Helpline: 24/7</a>
+          <a href="#">8 km from Chidambaram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GASC TransitHub — Govt. Arts & Science College, C.Mutlur. All rights reserved.</span>
+        <span>Built with ❤️ for Students</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SOS BUTTON (UNIQUE) ========== -->
+  <button class="sos-btn" id="sosBtn" aria-label="Emergency SOS">SOS</button>
+
+  <!-- SOS Modal -->
+  <div class="sos-modal" id="sosModal">
+    <div class="sos-modal-content">
+      <h2>🚨 Emergency Contacts</h2>
+      <p>If you're in an emergency during your commute, call these numbers immediately.</p>
+      <div class="sos-numbers" id="sosNumbers">
+        <div class="sos-number-card">
+          <div class="sos-number-info">
+            <h4>🚌 Transport Helpline</h4>
+            <p>+91 94421 00000</p>
+          </div>
+          <a href="tel:+919442100000" class="sos-call-btn">📞 Call</a>
+        </div>
+        <div class="sos-number-card">
+          <div class="sos-number-info">
+            <h4>🏥 Ambulance</h4>
+            <p>108</p>
+          </div>
+          <a href="tel:108" class="sos-call-btn">📞 Call</a>
+        </div>
+        <div class="sos-number-card">
+          <div class="sos-number-info">
+            <h4>👮 Police</h4>
+            <p>100</p>
+          </div>
+          <a href="tel:100" class="sos-call-btn">📞 Call</a>
+        </div>
+        <div class="sos-number-card">
+          <div class="sos-number-info">
+            <h4>🏫 College Office</h4>
+            <p>+91 4144 238 456</p>
+          </div>
+          <a href="tel:+914144238456" class="sos-call-btn">📞 Call</a>
+        </div>
+      </div>
+      <button class="btn btn-outline" onclick="closeSOS()" style="width: 100%; justify-content: center;">Close</button>
+    </div>
+  </div>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ========== TOAST ========== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

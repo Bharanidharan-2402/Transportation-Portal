@@ -1,0 +1,330 @@
+{
+  "college": {
+    "name": "Government Arts & Science College",
+    "location": "C.Mutlur, Chidambaram",
+    "district": "Cuddalore",
+    "state": "Tamil Nadu",
+    "pincode": "608102",
+    "coordinates": { "lat": 11.3936, "lng": 79.6935 },
+    "phone": "+91 4144 238 456",
+    "email": "transport@gacmutlur.edu.in",
+    "emergencyHelpline": "+91 94421 00000",
+    "officeLocation": "Room G-02, Admin Block, Ground Floor",
+    "officeHours": "Mon–Sat: 9:00 AM – 5:00 PM",
+    "busOperatingHours": "Mon–Sat: 6:00 AM – 7:00 PM",
+    "mapLink": "https://www.google.com/maps/place/Government+Arts+%26+Science+College,+C.Mutlur"
+  },
+
+  "routes": [
+    {
+      "id": "R1",
+      "number": "01",
+      "name": "Chidambaram Town → College",
+      "from": "Chidambaram",
+      "type": "non-ac",
+      "category": "regular",
+      "color": "#3b82f6",
+      "gradient": "linear-gradient(135deg, #3b82f6, #2563eb)",
+      "distance": "8 km",
+      "duration": "25 min",
+      "busCount": 3,
+      "seatsTotal": 52,
+      "seatsAvailable": 14,
+      "stops": [
+        { "name": "Chidambaram Bus Stand", "morningTime": "8:00 AM", "eveningTime": "5:00 PM", "landmark": "Near Nataraja Temple" },
+        { "name": "Chidambaram Railway Station", "morningTime": "8:08 AM", "eveningTime": "4:52 PM", "landmark": "Station Road" },
+        { "name": "Annamalai Nagar", "morningTime": "8:18 AM", "eveningTime": "4:42 PM", "landmark": "Near Annamalai University" },
+        { "name": "C.Mutlur Junction", "morningTime": "8:25 AM", "eveningTime": "4:35 PM", "landmark": "Main Road" },
+        { "name": "College Campus", "morningTime": "8:30 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R2",
+      "number": "02",
+      "name": "Cuddalore → College",
+      "from": "Cuddalore",
+      "type": "ac",
+      "category": "express",
+      "color": "#10b981",
+      "gradient": "linear-gradient(135deg, #10b981, #059669)",
+      "distance": "42 km",
+      "duration": "80 min",
+      "busCount": 4,
+      "seatsTotal": 48,
+      "seatsAvailable": 8,
+      "stops": [
+        { "name": "Cuddalore New Bus Stand", "morningTime": "7:00 AM", "eveningTime": "5:40 PM", "landmark": "Manjakuppam" },
+        { "name": "Nellikuppam", "morningTime": "7:18 AM", "eveningTime": "5:22 PM", "landmark": "Main Road Junction" },
+        { "name": "Sethiyathope", "morningTime": "7:35 AM", "eveningTime": "5:05 PM", "landmark": "Bus Stop" },
+        { "name": "Bhuvanagiri", "morningTime": "7:55 AM", "eveningTime": "4:45 PM", "landmark": "Town Center" },
+        { "name": "Chidambaram Bypass", "morningTime": "8:10 AM", "eveningTime": "4:35 PM", "landmark": "ECR Junction" },
+        { "name": "College Campus", "morningTime": "8:20 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R3",
+      "number": "03",
+      "name": "Mayiladuthurai → College",
+      "from": "Mayiladuthurai",
+      "type": "non-ac",
+      "category": "express",
+      "color": "#8b5cf6",
+      "gradient": "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+      "distance": "38 km",
+      "duration": "75 min",
+      "busCount": 3,
+      "seatsTotal": 52,
+      "seatsAvailable": 18,
+      "stops": [
+        { "name": "Mayiladuthurai Bus Stand", "morningTime": "7:05 AM", "eveningTime": "5:35 PM", "landmark": "Near Temple" },
+        { "name": "Vaitheeswaran Koil", "morningTime": "7:20 AM", "eveningTime": "5:20 PM", "landmark": "Navagraha Temple" },
+        { "name": "Sirkazhi", "morningTime": "7:40 AM", "eveningTime": "5:00 PM", "landmark": "Bus Stand" },
+        { "name": "Kollidam", "morningTime": "7:55 AM", "eveningTime": "4:45 PM", "landmark": "Bridge Junction" },
+        { "name": "Annamalai Nagar", "morningTime": "8:10 AM", "eveningTime": "4:40 PM", "landmark": "University Gate" },
+        { "name": "College Campus", "morningTime": "8:20 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R4",
+      "number": "04",
+      "name": "Kattumannarkoil → College",
+      "from": "Kattumannarkoil",
+      "type": "non-ac",
+      "category": "regular",
+      "color": "#f97316",
+      "gradient": "linear-gradient(135deg, #f97316, #ea580c)",
+      "distance": "22 km",
+      "duration": "45 min",
+      "busCount": 2,
+      "seatsTotal": 52,
+      "seatsAvailable": 22,
+      "stops": [
+        { "name": "Kattumannarkoil", "morningTime": "7:40 AM", "eveningTime": "5:15 PM", "landmark": "Temple Town Bus Stop" },
+        { "name": "Keelperumpallam", "morningTime": "7:52 AM", "eveningTime": "5:03 PM", "landmark": "Junction" },
+        { "name": "Bhuvanagiri", "morningTime": "8:00 AM", "eveningTime": "4:55 PM", "landmark": "Bus Stand" },
+        { "name": "C.Mutlur", "morningTime": "8:12 AM", "eveningTime": "4:43 PM", "landmark": "Village Center" },
+        { "name": "College Campus", "morningTime": "8:20 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R5",
+      "number": "05",
+      "name": "Parangipettai → College",
+      "from": "Parangipettai",
+      "type": "non-ac",
+      "category": "regular",
+      "color": "#06b6d4",
+      "gradient": "linear-gradient(135deg, #06b6d4, #0891b2)",
+      "distance": "15 km",
+      "duration": "35 min",
+      "busCount": 2,
+      "seatsTotal": 48,
+      "seatsAvailable": 20,
+      "stops": [
+        { "name": "Parangipettai (Porto Novo)", "morningTime": "7:45 AM", "eveningTime": "5:10 PM", "landmark": "Bus Stand" },
+        { "name": "Killai", "morningTime": "7:55 AM", "eveningTime": "5:00 PM", "landmark": "Mangrove Road" },
+        { "name": "Pichavaram Junction", "morningTime": "8:02 AM", "eveningTime": "4:53 PM", "landmark": "Forest Entry" },
+        { "name": "Annamalai Nagar", "morningTime": "8:12 AM", "eveningTime": "4:43 PM", "landmark": "University Gate" },
+        { "name": "College Campus", "morningTime": "8:20 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R6",
+      "number": "06",
+      "name": "Sirkazhi → College",
+      "from": "Sirkazhi",
+      "type": "ac",
+      "category": "regular",
+      "color": "#eab308",
+      "gradient": "linear-gradient(135deg, #eab308, #ca8a04)",
+      "distance": "20 km",
+      "duration": "40 min",
+      "busCount": 2,
+      "seatsTotal": 44,
+      "seatsAvailable": 12,
+      "stops": [
+        { "name": "Sirkazhi Bus Stand", "morningTime": "7:40 AM", "eveningTime": "5:15 PM", "landmark": "Near Temple" },
+        { "name": "Tharangambadi (Tranquebar)", "morningTime": "7:52 AM", "eveningTime": "5:03 PM", "landmark": "Coastal Road" },
+        { "name": "Kollidam Bridge", "morningTime": "8:00 AM", "eveningTime": "4:55 PM", "landmark": "River Crossing" },
+        { "name": "Chidambaram East", "morningTime": "8:10 AM", "eveningTime": "4:45 PM", "landmark": "East Car Street" },
+        { "name": "College Campus", "morningTime": "8:20 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R7",
+      "number": "07",
+      "name": "Villupuram → College",
+      "from": "Villupuram",
+      "type": "ac",
+      "category": "express",
+      "color": "#ec4899",
+      "gradient": "linear-gradient(135deg, #ec4899, #db2777)",
+      "distance": "90 km",
+      "duration": "120 min",
+      "busCount": 2,
+      "seatsTotal": 44,
+      "seatsAvailable": 5,
+      "stops": [
+        { "name": "Villupuram Bus Stand", "morningTime": "6:15 AM", "eveningTime": "6:30 PM", "landmark": "Central Bus Terminal" },
+        { "name": "Virudhachalam", "morningTime": "6:50 AM", "eveningTime": "5:55 PM", "landmark": "Town Center" },
+        { "name": "Kattumannarkoil", "morningTime": "7:15 AM", "eveningTime": "5:30 PM", "landmark": "Temple Town" },
+        { "name": "Bhuvanagiri", "morningTime": "7:35 AM", "eveningTime": "5:10 PM", "landmark": "Bus Stand" },
+        { "name": "Chidambaram Bypass", "morningTime": "7:55 AM", "eveningTime": "4:50 PM", "landmark": "ECR Junction" },
+        { "name": "Annamalai Nagar", "morningTime": "8:05 AM", "eveningTime": "4:40 PM", "landmark": "University Gate" },
+        { "name": "College Campus", "morningTime": "8:15 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    },
+    {
+      "id": "R8",
+      "number": "08",
+      "name": "Kumbakonam → College",
+      "from": "Kumbakonam",
+      "type": "non-ac",
+      "category": "express",
+      "color": "#14b8a6",
+      "gradient": "linear-gradient(135deg, #14b8a6, #0d9488)",
+      "distance": "65 km",
+      "duration": "100 min",
+      "busCount": 3,
+      "seatsTotal": 52,
+      "seatsAvailable": 15,
+      "stops": [
+        { "name": "Kumbakonam Bus Stand", "morningTime": "6:30 AM", "eveningTime": "6:10 PM", "landmark": "Central Stand" },
+        { "name": "Mayiladuthurai", "morningTime": "7:00 AM", "eveningTime": "5:40 PM", "landmark": "Bus Stand" },
+        { "name": "Vaitheeswaran Koil", "morningTime": "7:15 AM", "eveningTime": "5:25 PM", "landmark": "Navagraha Temple" },
+        { "name": "Sirkazhi", "morningTime": "7:30 AM", "eveningTime": "5:10 PM", "landmark": "Bus Stand" },
+        { "name": "Kollidam", "morningTime": "7:45 AM", "eveningTime": "4:55 PM", "landmark": "Bridge" },
+        { "name": "Chidambaram", "morningTime": "8:00 AM", "eveningTime": "4:45 PM", "landmark": "Bus Stand" },
+        { "name": "College Campus", "morningTime": "8:15 AM", "eveningTime": "4:30 PM", "landmark": "Main Gate" }
+      ]
+    }
+  ],
+
+  "fees": {
+    "semester": [
+      { "distance": "0 – 10 km", "nonAcPrice": 3500, "acPrice": 5000, "icon": "🏠", "label": "Local Zone" },
+      { "distance": "10 – 25 km", "nonAcPrice": 5500, "acPrice": 7500, "icon": "🚏", "label": "Town Zone", "popular": true },
+      { "distance": "25 – 50 km", "nonAcPrice": 7500, "acPrice": 10000, "icon": "🛣️", "label": "District Zone" },
+      { "distance": "50+ km", "nonAcPrice": 9500, "acPrice": 13000, "icon": "🌍", "label": "Inter-District" }
+    ],
+    "annual": [
+      { "distance": "0 – 10 km", "nonAcPrice": 6300, "acPrice": 9000, "icon": "🏠", "label": "Local Zone" },
+      { "distance": "10 – 25 km", "nonAcPrice": 9900, "acPrice": 13500, "icon": "🚏", "label": "Town Zone", "popular": true },
+      { "distance": "25 – 50 km", "nonAcPrice": 13500, "acPrice": 18000, "icon": "🛣️", "label": "District Zone" },
+      { "distance": "50+ km", "nonAcPrice": 17100, "acPrice": 23400, "icon": "🌍", "label": "Inter-District" }
+    ]
+  },
+
+  "announcements": [
+    {
+      "id": "ANN001",
+      "title": "Route 3 Diverted via Kollidam Due to Bridge Repair",
+      "text": "Route 3 (Mayiladuthurai) will take an alternate path via Kollidam bypass starting Sept 22. Expected delay: 15 minutes.",
+      "expandText": "The Kollidam main bridge is under maintenance for 3 weeks. Students from Sirkazhi and Vaitheeswaran Koil should board 15 minutes earlier than usual. A temporary stop has been added at Kollidam South.",
+      "date": "September 18, 2026",
+      "priority": "urgent",
+      "icon": "🚧"
+    },
+    {
+      "id": "ANN002",
+      "title": "Bus Pass Renewal Deadline — October 5",
+      "text": "Last date to renew your semester bus pass is October 5, 2026. Late fee of ₹500 applies after the deadline.",
+      "expandText": "Visit the Transport Office (Room G-02, Admin Block) or use this portal's Apply section. Carry your old pass, Student ID, and one passport-size photo. Online applications are also accepted.",
+      "date": "September 17, 2026",
+      "priority": "important",
+      "icon": "📅"
+    },
+    {
+      "id": "ANN003",
+      "title": "New AC Bus Service on Route 6 (Sirkazhi)",
+      "text": "AC bus service is now available on Route 6. Students can upgrade their pass with a difference fee.",
+      "expandText": "The AC bus will operate on the same schedule. Upgrade pricing: ₹2,000 additional per semester. Limited seats (44) — first come, first served. Apply at the Transport Office.",
+      "date": "September 15, 2026",
+      "priority": "info",
+      "icon": "❄️"
+    },
+    {
+      "id": "ANN004",
+      "title": "Transport Safety Drill — September 25",
+      "text": "Mandatory emergency evacuation drill for all bus commuters. Attendance will be recorded.",
+      "expandText": "The drill covers emergency exits, fire safety, first aid, and breakdown protocols. Venue: College Ground, 2 PM – 4 PM. All bus pass holders must attend. Absentees will need to attend a makeup session.",
+      "date": "September 14, 2026",
+      "priority": "important",
+      "icon": "🛡️"
+    },
+    {
+      "id": "ANN005",
+      "title": "Pongal Holiday Bus Schedule 2027",
+      "text": "Reduced bus services during Pongal holidays (Jan 14–17, 2027). Only Routes 1, 2, and 7 will operate.",
+      "expandText": "Routes 1 (Chidambaram), 2 (Cuddalore), and 7 (Villupuram) will run with reduced frequency — one morning and one evening trip each. All other routes suspended during the break.",
+      "date": "September 12, 2026",
+      "priority": "info",
+      "icon": "🎉"
+    }
+  ],
+
+  "tickerMessages": [
+    "⚠️ Route 3 diverted via Kollidam bypass — expect 15 min delay starting Sept 22",
+    "📋 Bus pass renewal deadline: October 5 — renew now to avoid ₹500 late fee!",
+    "❄️ AC bus now available on Route 6 (Sirkazhi) — limited seats!",
+    "🛡️ Mandatory safety drill on Sept 25, 2 PM — all bus pass holders must attend",
+    "⏰ Morning buses arrive at college by 8:15 – 8:30 AM daily"
+  ],
+
+  "users": [
+    {
+      "studentId": "STU2026001",
+      "password": "demo123",
+      "name": "Bharani Kumar S",
+      "initials": "BK",
+      "department": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "routeId": "R2",
+      "routeName": "Route 2 — Cuddalore",
+      "boardingPoint": "Sethiyathope",
+      "passType": "Annual Pass",
+      "busType": "AC",
+      "morningPickup": "7:35 AM",
+      "eveningDrop": "5:05 PM",
+      "passStatus": "active",
+      "validUntil": "March 2027",
+      "feesPaid": "₹13,500",
+      "passNumber": "GACM-2026-0451",
+      "trackerSteps": [
+        { "label": "Applied", "status": "completed" },
+        { "label": "Fee Paid", "status": "completed" },
+        { "label": "Verified", "status": "completed" },
+        { "label": "Active", "status": "active" }
+      ]
+    },
+    {
+      "studentId": "STU2026042",
+      "password": "pass456",
+      "name": "Priya Dharshini R",
+      "initials": "PD",
+      "department": "Electronics & Communication",
+      "year": "2nd Year",
+      "routeId": "R1",
+      "routeName": "Route 1 — Chidambaram",
+      "boardingPoint": "Chidambaram Bus Stand",
+      "passType": "Semester Pass",
+      "busType": "Non-AC",
+      "morningPickup": "8:00 AM",
+      "eveningDrop": "5:00 PM",
+      "passStatus": "active",
+      "validUntil": "November 2026",
+      "feesPaid": "₹3,500",
+      "passNumber": "GACM-2026-0289",
+      "trackerSteps": [
+        { "label": "Applied", "status": "completed" },
+        { "label": "Fee Paid", "status": "completed" },
+        { "label": "Verified", "status": "completed" },
+        { "label": "Active", "status": "active" }
+      ]
+    }
+  ],
+
+  "applications": [],
+
+  "feedback": []
+}
